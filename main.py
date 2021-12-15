@@ -16,6 +16,28 @@ def palm_size(landmark, shape):
     return ((x1 - x2) ** 2 + (y1 - y2) ** 2) ** 0.5
 
 
+def stone(r, ws):
+    if not (2 * r / ws > 1.3):
+        return True
+    return False
+
+
+def table():
+    pass
+
+
+def bird():
+    pass
+
+
+def water():
+    pass
+
+
+def gun():
+    pass
+
+
 handsDetector = mp.solutions.hands.Hands()
 cap = cv2.VideoCapture(0)
 while cap.isOpened():
@@ -28,9 +50,21 @@ while cap.isOpened():
     if results.multi_hand_landmarks is not None:
         (x, y), r = cv2.minEnclosingCircle(get_points(results.multi_hand_landmarks[0].landmark, flippedRGB.shape))
         ws = palm_size(results.multi_hand_landmarks[0].landmark, flippedRGB.shape)
-        if not (2 * r / ws > 1.3):
+        if stone(r, ws):
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(flippedRGB, 'stone', (10, 100), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+        if table():
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(flippedRGB, 'table', (10, 100), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+        if water():
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(flippedRGB, 'water', (10, 100), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+        if bird():
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(flippedRGB, 'bird', (10, 100), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+        if gun():
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(flippedRGB, 'table', (10, 100), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
     res_image = cv2.cvtColor(flippedRGB, cv2.COLOR_RGB2BGR)
     cv2.imshow("Hands", res_image)
 
