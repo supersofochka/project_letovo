@@ -26,15 +26,11 @@ while cap.isOpened():
     flippedRGB = cv2.cvtColor(flipped, cv2.COLOR_BGR2RGB)
     results = handsDetector.process(flippedRGB)
     if results.multi_hand_landmarks is not None:
-        cv2.drawContours(flippedRGB, [get_points(results.multi_hand_landmarks[0].landmark, flippedRGB.shape)], 0,
-                         (255, 0, 0), 2)
         (x, y), r = cv2.minEnclosingCircle(get_points(results.multi_hand_landmarks[0].landmark, flippedRGB.shape))
         ws = palm_size(results.multi_hand_landmarks[0].landmark, flippedRGB.shape)
-        if 2 * r / ws > 1.3:
-            cv2.circle(flippedRGB, (int(x), int(y)), int(r), (0, 0, 255), 2)
-        else:
-            cv2.circle(flippedRGB, (int(x), int(y)), int(r), (0, 255, 0), 2)
-            print('кулак, то есть камень')
+        if not (2 * r / ws > 1.3):
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            cv2.putText(flippedRGB, 'stone', (10, 100), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
     res_image = cv2.cvtColor(flippedRGB, cv2.COLOR_RGB2BGR)
     cv2.imshow("Hands", res_image)
 
