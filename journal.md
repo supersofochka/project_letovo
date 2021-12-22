@@ -18,3 +18,14 @@
 ![image](https://user-images.githubusercontent.com/74818186/147041593-054a451b-ecf9-415d-8bb8-defd8149c6ed.png)
 
 3. Закоммитила и запушила
+
+**22 декабря**
+1. Реализовала вывод текста о том, что пользователю необходимо сделать
+
+![image](https://user-images.githubusercontent.com/74818186/147046724-7a7c2fc8-6ddd-4c6e-bdba-dfa9db96dfe1.png)
+
+2. Подбирала координаты текста, чтобы он не наслаивался на текст вывода результата распознавания
+
+![image](https://user-images.githubusercontent.com/74818186/147046995-00a4776f-ef45-40d5-ae69-011ffe60f1b5.png)
+
+3. Закоммитила и запушила
