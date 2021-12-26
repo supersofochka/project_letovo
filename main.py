@@ -26,7 +26,15 @@ def stone(r, ws):
     return False
 
 
-def table():
+def table(points, left_right):
+    if points[4].y < points[3].y and points[8].y < points[7].y and points[12].y < points[11].y and \
+            points[16].y < points[15].y and points[20].y < points[19].y:
+        if 'Left' in str(left_right):
+            if points[4].x < points[20].x:
+                return True
+        if 'Right' in str(left_right):
+            if points[4].x > points[20].x:
+                return True
     return False
 
 
@@ -34,10 +42,15 @@ def bird():
     return False
 
 
-def water(points):
+def water(points, left_right):
     if points[4].y < points[3].y and points[8].y < points[7].y and points[12].y < points[11].y and \
             points[16].y < points[15].y and points[20].y < points[19].y:
-        return True
+        if 'Left' in str(left_right):
+            if points[4].x > points[20].x:
+                return True
+        if 'Right' in str(left_right):
+            if points[4].x < points[20].x:
+                return True
     return False
 
 
@@ -75,11 +88,11 @@ while cap.isOpened():
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(flippedRGB, 'stone', (10, 200), font, 4, (255, 0, 0), 2, cv2.LINE_AA)
 
-        if table():
+        if table(results.multi_hand_landmarks[0].landmark, results.multi_handedness[0]):
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(flippedRGB, 'table', (10, 200), font, 4, (255, 0, 0), 2, cv2.LINE_AA)
 
-        if water(results.multi_hand_landmarks[0].landmark):
+        if water(results.multi_hand_landmarks[0].landmark, results.multi_handedness[0]):
             font = cv2.FONT_HERSHEY_SIMPLEX
             cv2.putText(flippedRGB, 'water', (10, 200), font, 4, (255, 0, 0), 2, cv2.LINE_AA)
 

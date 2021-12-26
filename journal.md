@@ -46,3 +46,8 @@
 ![image](https://user-images.githubusercontent.com/74818186/147415494-9de7b0d6-7037-4cd6-9948-bd3a5c0f0aad.png)
 
 6. Закоммитила и запушила
+7. Реализовала распознавание стола
+
+![image](https://user-images.githubusercontent.com/74818186/147417592-a6fddf01-799f-4cf0-acf6-ddfd5f292dfb.png)
+
+8. Закоммитила и запушила
