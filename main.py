@@ -2,6 +2,10 @@ import mediapipe as mp
 import numpy as np
 from cv2 import cv2
 
+img1 = cv2.imread("scheme.png")
+cv2.imshow("Prompting", img1)
+cv2.waitKey(0)
+
 
 def get_points(landmark, shape):
     points = list()
@@ -23,19 +27,19 @@ def stone(r, ws):
 
 
 def table():
-    pass
+    return False
 
 
 def bird():
-    pass
+    return False
 
 
 def water():
-    pass
+    return False
 
 
 def gun():
-    pass
+    return False
 
 
 handsDetector = mp.solutions.hands.Hands()
