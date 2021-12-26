@@ -29,3 +29,10 @@
 ![image](https://user-images.githubusercontent.com/74818186/147046995-00a4776f-ef45-40d5-ae69-011ffe60f1b5.png)
 
 3. Закоммитила и запушила
+
+**26 декабря**
+1. Добавила подсказку для пользователя
+
+![image](https://user-images.githubusercontent.com/74818186/147410602-f56190cb-1ff9-4e89-af0b-70160fe7aab9.png)
+
+2. Закоммитила и запушила
