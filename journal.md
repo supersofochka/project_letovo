@@ -36,3 +36,8 @@
 ![image](https://user-images.githubusercontent.com/74818186/147410775-3d310beb-6b00-4ae4-953a-7dacef55f3b4.png)
 
 2. Закоммитила и запушила
+3. Реализовала распознавание воды
+
+![image](https://user-images.githubusercontent.com/74818186/147415230-fcc4b26c-c8da-4521-a1dd-0ea21f5c3133.png)
+
+4. Закоммитила и запушила

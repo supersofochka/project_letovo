@@ -34,7 +34,10 @@ def bird():
     return False
 
 
-def water():
+def water(points):
+    if points[4].y < points[3].y and points[8].y < points[7].y and points[12].y < points[11].y and \
+            points[16].y < points[15].y and points[20].y < points[19].y:
+        return True
     return False
 
 
@@ -74,19 +77,19 @@ while cap.isOpened():
 
         if table():
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(flippedRGB, 'table', (10, 200), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.putText(flippedRGB, 'table', (10, 200), font, 4, (255, 0, 0), 2, cv2.LINE_AA)
 
-        if water():
+        if water(results.multi_hand_landmarks[0].landmark):
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(flippedRGB, 'water', (10, 200), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.putText(flippedRGB, 'water', (10, 200), font, 4, (255, 0, 0), 2, cv2.LINE_AA)
 
         if bird():
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(flippedRGB, 'bird', (10, 200), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.putText(flippedRGB, 'bird', (10, 200), font, 4, (255, 0, 0), 2, cv2.LINE_AA)
 
         if gun():
             font = cv2.FONT_HERSHEY_SIMPLEX
-            cv2.putText(flippedRGB, 'gun', (10, 200), font, 4, (255, 255, 255), 2, cv2.LINE_AA)
+            cv2.putText(flippedRGB, 'gun', (10, 200), font, 4, (255, 0, 0), 2, cv2.LINE_AA)
 
     res_image = cv2.cvtColor(flippedRGB, cv2.COLOR_RGB2BGR)
     cv2.imshow("Hands", res_image)
