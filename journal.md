@@ -41,3 +41,8 @@
 ![image](https://user-images.githubusercontent.com/74818186/147415230-fcc4b26c-c8da-4521-a1dd-0ea21f5c3133.png)
 
 4. Закоммитила и запушила
+5. Изменила подсказку для пользователя
+
+![image](https://user-images.githubusercontent.com/74818186/147415494-9de7b0d6-7037-4cd6-9948-bd3a5c0f0aad.png)
+
+6. Закоммитила и запушила
